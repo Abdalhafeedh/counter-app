@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter App - DOM Manipulation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main class="container">
+        <h1>Counter App</h1>
+        
+        <div class="counter-card">
+            <div class="counter-display">
+                <output id="count" aria-live="polite" role="status">0</output>
+            </div>
+            
+            <div class="counter-controls">
+                <button 
+                    id="decrementBtn" 
+                    class="btn btn-decrement" 
+                    aria-label="Decrease count by 1"
+                    aria-disabled="true">
+                    -1
+                </button>
+                
+                <button 
+                    id="resetBtn" 
+                    class="btn btn-reset" 
+                    aria-label="Reset count to 0"
+                    aria-disabled="true">
+                    Reset
+                </button>
+                
+                <button 
+                    id="incrementBtn" 
+                    class="btn btn-increment" 
+                    aria-label="Increase count by 1">
+                    +1
+                </button>
+            </div>
+        </div>
+        
+        <p class="instructions">
+            Use the buttons above or press <kbd>↑</kbd> to increment and <kbd>↓</kbd> to decrement
+        </p>
+    </main>
+    
+    <script src="script.js"></script>
+</body>
+</html>

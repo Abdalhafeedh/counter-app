@@ -1,0 +1,195 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+/* Container and layout */
+.container {
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+}
+
+h1 {
+    color: white;
+    margin-bottom: 2rem;
+    font-size: 2.5rem;
+    font-weight: 300;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Counter card */
+.counter-card {
+    background: white;
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    margin-bottom: 1.5rem;
+}
+
+/* Counter display */
+.counter-display {
+    margin-bottom: 2rem;
+}
+
+#count {
+    font-size: 4rem;
+    font-weight: 700;
+    color: #2d3748;
+    display: block;
+    transition: transform 0.2s ease;
+}
+
+#count:focus {
+    outline: none;
+}
+
+/* Counter controls */
+.counter-controls {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Button styles */
+.btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    min-width: 80px;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn:focus {
+    outline: 2px solid #667eea;
+    outline-offset: 2px;
+}
+
+.btn:active {
+    transform: translateY(1px);
+}
+
+/* Increment button */
+.btn-increment {
+    background: #48bb78;
+    color: white;
+}
+
+.btn-increment:hover:not(:disabled) {
+    background: #38a169;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(72, 187, 120, 0.4);
+}
+
+/* Decrement button */
+.btn-decrement {
+    background: #f56565;
+    color: white;
+}
+
+.btn-decrement:hover:not(:disabled) {
+    background: #e53e3e;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(245, 101, 101, 0.4);
+}
+
+/* Reset button */
+.btn-reset {
+    background: #ed8936;
+    color: white;
+}
+
+.btn-reset:hover:not(:disabled) {
+    background: #dd6b20;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(237, 137, 54, 0.4);
+}
+
+/* Disabled state */
+.btn:disabled {
+    background: #cbd5e0;
+    color: #a0aec0;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* Instructions */
+.instructions {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+kbd {
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    padding: 0.2rem 0.4rem;
+    font-size: 0.8rem;
+    font-family: monospace;
+}
+
+/* Animation for count changes */
+@keyframes countChange {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.count-changed {
+    animation: countChange 0.3s ease;
+}
+
+/* Responsive design */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2rem;
+    }
+    
+    .counter-card {
+        padding: 1.5rem;
+    }
+    
+    #count {
+        font-size: 3rem;
+    }
+    
+    .counter-controls {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .btn {
+        width: 100%;
+        max-width: 200px;
+    }
+}
+
+@media (max-width: 320px) {
+    .counter-card {
+        padding: 1rem;
+    }
+    
+    #count {
+        font-size: 2.5rem;
+    }
+}
